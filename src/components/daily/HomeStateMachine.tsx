@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { ContentIndex } from "@/lib/content/index";
 import { useProgress } from "@/lib/state/ProgressProvider";
 import { selectDailyLesson } from "@/lib/domain/daily";
@@ -10,13 +11,14 @@ import { DailyCard } from "./DailyCard";
 import { DailyDoneState } from "./DailyDoneState";
 import { AllClearedState } from "./AllClearedState";
 import { DailyCardSkeleton } from "./DailyCardSkeleton";
-import { StreakBadge } from "@/components/shared/StreakBadge";
+import { HomeProgress } from "./HomeProgress";
 
 /**
  * 홈 상태 기계 (T-48 / design §5.1 / AC-1.1, AC-2.1, AC-2.11)
  * DIAGNOSTIC_CTA / TODAY_PENDING / TODAY_DONE / ALL_CLEARED
  */
 export function HomeStateMachine({ index }: { index: ContentIndex }) {
+  const router = useRouter();
   const { mounted, state, setDaily } = useProgress();
   const today = localDateKey();
 
@@ -56,7 +58,7 @@ export function HomeStateMachine({ index }: { index: ContentIndex }) {
   if (!result || result.kind === "all-cleared") {
     return (
       <div className="flex flex-col gap-4">
-        <StreakBadge />
+        <HomeProgress index={index} />
         <AllClearedState index={index} />
       </div>
     );
@@ -74,10 +76,11 @@ export function HomeStateMachine({ index }: { index: ContentIndex }) {
   if (servedDone) {
     return (
       <div className="flex flex-col gap-4">
+        <HomeProgress index={index} />
         <DailyDoneState
           onMore={() => {
-            // 다음 후보로 이동: 현재 result가 이미 다음 미완료 레슨을 가리킴
-            window.location.href = `/lessons/${lesson.id}/`;
+            // 다음 후보로 클라이언트 라우팅 이동(NFR-2, 페이지 리로드 없음)
+            router.push(`/lessons/${lesson.id}/`);
           }}
         />
       </div>
@@ -86,7 +89,7 @@ export function HomeStateMachine({ index }: { index: ContentIndex }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <StreakBadge />
+      <HomeProgress index={index} />
       <DailyCard lesson={lesson} trackTitle={trackTitle} />
     </div>
   );

@@ -12,7 +12,7 @@ export function SourceList({ sources, verifiedAt }: Pick<LessonMeta, "sources" |
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[var(--accent)] underline"
+              className="text-[var(--accent-text)] underline"
             >
               {s.label}
             </a>

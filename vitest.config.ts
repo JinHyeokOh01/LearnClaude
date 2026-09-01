@@ -2,6 +2,10 @@ import { defineConfig } from "vitest/config";
 import path from "node:path";
 
 export default defineConfig({
+  // JSX 자동 런타임 → 테스트에서 React 임포트 불필요
+  esbuild: {
+    jsx: "automatic",
+  },
   test: {
     // 도메인 로직은 순수 함수 → node 환경. 컴포넌트 테스트가 필요한 파일은
     // 파일 상단 주석 // @vitest-environment jsdom 으로 개별 지정한다.

@@ -55,7 +55,7 @@ export function SettingsPanel() {
         <button
           type="button"
           onClick={confirmReset}
-          className="rounded-md border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+          className="rounded-md border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent-text)]"
         >
           진도 초기화
         </button>

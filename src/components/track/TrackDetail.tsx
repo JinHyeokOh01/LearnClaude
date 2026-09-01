@@ -32,7 +32,7 @@ export function TrackDetail({
         <h1 className="mb-2 text-2xl font-bold text-[var(--text)]">{track.title}</h1>
         <p className="text-[var(--text-muted)]">{track.outcome}</p>
         {track.prerequisiteNote && (
-          <p className="mt-2 text-sm text-[var(--accent)]">⚠ {track.prerequisiteNote}</p>
+          <p className="mt-2 text-sm text-[var(--accent-text)]">⚠ {track.prerequisiteNote}</p>
         )}
       </div>
 

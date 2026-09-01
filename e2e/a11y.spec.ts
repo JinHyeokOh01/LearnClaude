@@ -17,8 +17,20 @@ const pages = [
 ];
 
 for (const p of pages) {
-  test(`a11y: ${p.name}`, async ({ page }) => {
+  test(`a11y(라이트): ${p.name}`, async ({ page }) => {
     await page.goto(p.path);
+    const results = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(results.violations).toEqual([]);
+  });
+}
+
+// 다크 테마 접근성 검증 (2번 개선) — html[data-theme=dark]로 강제
+for (const p of pages) {
+  test(`a11y(다크): ${p.name}`, async ({ page }) => {
+    await page.goto(p.path);
+    await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
       .analyze();

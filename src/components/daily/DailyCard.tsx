@@ -14,7 +14,7 @@ export function DailyCard({ lesson, trackTitle }: { lesson: Lesson; trackTitle: 
   return (
     <div className="rounded-[var(--radius-l)] border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[var(--shadow-card)]">
       <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
-        <span className="rounded-[var(--radius-full)] bg-[var(--accent-soft)] px-2.5 py-1 font-medium text-[var(--accent)]">
+        <span className="rounded-[var(--radius-full)] bg-[var(--accent-soft)] px-2.5 py-1 font-medium text-[var(--accent-text)]">
           {trackTitle}
         </span>
         <span className="text-[var(--text-muted)]">레벨 {lesson.level}</span>

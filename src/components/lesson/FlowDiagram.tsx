@@ -27,7 +27,7 @@ export function FlowDiagram({ steps: stepsRaw, caption }: { steps: string; capti
             </li>
             {i < steps.length - 1 && (
               <span
-                className="flex shrink-0 items-center justify-center text-lg leading-none text-[var(--accent)]"
+                className="flex shrink-0 items-center justify-center text-lg leading-none text-[var(--accent-text)]"
                 aria-hidden
               >
                 <span className="hidden sm:inline">→</span>

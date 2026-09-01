@@ -20,7 +20,7 @@ export function LessonHeader({ lesson, trackTitle }: { lesson: LessonMeta; track
       </div>
       <h1 className="text-2xl font-bold text-[var(--text)]">{lesson.title}</h1>
       {reqParts.length > 0 && (
-        <p className="rounded-md border border-[var(--accent)] px-3 py-2 text-sm text-[var(--accent)]">
+        <p className="rounded-md border border-[var(--accent)] px-3 py-2 text-sm text-[var(--accent-text)]">
           사전 요구사항: {reqParts.join(", ")}
         </p>
       )}

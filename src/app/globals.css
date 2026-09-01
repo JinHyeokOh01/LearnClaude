@@ -6,7 +6,10 @@
  *   절제된 단일 액센트, 넉넉한 여백, 부드러운 라운드, 명확한 타이포 위계.
  *   단 색은 StepUp 고유 팔레트(인디고 계열)로 두어 브랜드를 구분한다.
  * 규칙: 라이트 팔레트를 :root에 완전히 정의하고, 다크는 토큰만 재정의(NFR-10).
- * 3상태 테마: data-theme="light" | "dark" | (미지정 시 시스템 설정)
+ *
+ * 액센트 토큰 분리(WCAG AA, NFR-4):
+ *   --accent      : 버튼 "배경"용. 흰 텍스트가 4.5:1 이상 읽혀야 함.
+ *   --accent-text : 텍스트/로고/링크용. 페이지 배경 위에서 4.5:1 이상 읽혀야 함.
  */
 
 :root {
@@ -16,10 +19,11 @@
   --surface-2: #f1f3f6;
   --border: #e3e6eb;
   --text: #1b1d21;
-  --text-muted: #5c626d;
+  --text-muted: #565c67;
 
-  /* 브랜드 · 상태 — StepUp 고유 인디고 액센트 (WCAG AA 대비 충족, NFR-4) */
-  --accent: #3538cd;
+  /* 브랜드 · 상태 — StepUp 고유 인디고 */
+  --accent: #3538cd; /* 배경용: 흰 텍스트 대비 ~6:1 */
+  --accent-text: #3538cd; /* 텍스트용: 흰 배경 대비 ~6:1 */
   --accent-hover: #2b2ea8;
   --accent-soft: #eef0ff;
   --success: #1f7a4d;
@@ -39,7 +43,6 @@
   --radius-l: 16px;
   --radius-full: 999px;
 
-  /* 그림자 — 아주 옅게, 카드 분리용 */
   --shadow-card: 0 1px 2px rgba(20, 24, 40, 0.04), 0 2px 8px rgba(20, 24, 40, 0.04);
 }
 
@@ -50,12 +53,13 @@
   --surface-2: #232732;
   --border: #2f3440;
   --text: #f2f4f8;
-  --text-muted: #a2a9b6;
+  --text-muted: #aeb4c0;
 
-  --accent: #9aa2ff;
-  --accent-hover: #b3b9ff;
+  --accent: #5a62d8; /* 배경용: 흰 텍스트 대비 ~5:1 */
+  --accent-text: #aab2ff; /* 텍스트용: 다크 배경 대비 ~7:1 */
+  --accent-hover: #7178ec;
   --accent-soft: #23273a;
-  --success: #6fce9c;
+  --success: #237a4e;
   --success-soft: #1c2b23;
 
   --track-basics: #7ba0e8;
@@ -68,7 +72,6 @@
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 시스템이 다크이고 사용자가 명시적으로 라이트를 고르지 않았을 때만 다크 토큰 적용 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #14161c;
@@ -76,12 +79,13 @@
     --surface-2: #232732;
     --border: #2f3440;
     --text: #f2f4f8;
-    --text-muted: #a2a9b6;
+    --text-muted: #aeb4c0;
 
-    --accent: #9aa2ff;
-    --accent-hover: #b3b9ff;
+    --accent: #5a62d8;
+    --accent-text: #aab2ff;
+    --accent-hover: #7178ec;
     --accent-soft: #23273a;
-    --success: #6fce9c;
+    --success: #237a4e;
     --success-soft: #1c2b23;
 
     --track-basics: #7ba0e8;
@@ -104,6 +108,7 @@
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-success: var(--success);

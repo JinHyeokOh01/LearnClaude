@@ -29,7 +29,7 @@ export function AllClearedState({ index }: { index: ContentIndex }) {
             <li key={l.id}>
               <Link
                 href={`/lessons/${l.id}/`}
-                className="text-[var(--accent)] underline"
+                className="text-[var(--accent-text)] underline"
               >
                 {l.title}
               </Link>
