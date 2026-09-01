@@ -15,9 +15,9 @@
   --text: #1f1d1a;
   --text-muted: #6b665e;
 
-  /* 브랜드 · 상태 */
-  --accent: #c2603a;
-  --success: #3f7a52;
+  /* 브랜드 · 상태 — WCAG AA 대비 충족을 위해 조정(NFR-4) */
+  --accent: #a8461f;
+  --success: #2f6b43;
 
   /* 트랙별 accent (design §4.1 트랙 6개) */
   --track-basics: #6b7f9e;
