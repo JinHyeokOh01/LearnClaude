@@ -45,10 +45,10 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={cycle}
-      className="rounded-md border border-[var(--border)] px-2 py-1 text-sm text-[var(--text)] hover:bg-[var(--surface)]"
+      className="rounded-[var(--radius-s)] px-3 py-1.5 text-sm text-[var(--text-muted)] transition-colors hover:bg-[var(--surface-2)] hover:text-[var(--text)]"
       aria-label={`테마 전환 (현재: ${label})`}
     >
-      {mounted ? `테마: ${label}` : "테마"}
+      {mounted ? label : "테마"}
     </button>
   );
 }

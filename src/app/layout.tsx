@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ProgressProvider index={index}>
           <StorageWarningBanner />
           <SiteHeader />
-          <main className="mx-auto w-full max-w-2xl px-4 py-6">{children}</main>
+          <main className="mx-auto w-full max-w-2xl px-4 py-10">{children}</main>
         </ProgressProvider>
       </body>
     </html>

@@ -25,22 +25,27 @@ export function TrackList({ index }: { index: ContentIndex }) {
             <li key={track.id}>
               <Link
                 href={`/tracks/${track.id}/`}
-                className="block rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]"
+                className="block rounded-[var(--radius-l)] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:border-[var(--accent)]"
               >
-                <div className="mb-1 flex items-center gap-2">
+                <div className="mb-1.5 flex items-center gap-2">
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ background: `var(--track-${track.id})` }}
+                    aria-hidden
+                  />
                   <h2 className="text-lg font-semibold text-[var(--text)]">{track.title}</h2>
                   {mounted && kind === "completed" && (
-                    <span className="rounded bg-[var(--success)] px-2 py-0.5 text-xs text-white">
+                    <span className="rounded-[var(--radius-full)] bg-[var(--success)] px-2.5 py-0.5 text-xs font-medium text-white">
                       완주
                     </span>
                   )}
                   {mounted && kind === "already-known" && (
-                    <span className="rounded bg-[var(--border)] px-2 py-0.5 text-xs text-[var(--text-muted)]">
+                    <span className="rounded-[var(--radius-full)] bg-[var(--surface-2)] px-2.5 py-0.5 text-xs font-medium text-[var(--text-muted)]">
                       이미 아는 트랙
                     </span>
                   )}
                 </div>
-                <p className="mb-3 text-sm text-[var(--text-muted)]">{track.tagline}</p>
+                <p className="mb-4 text-sm text-[var(--text-muted)]">{track.tagline}</p>
                 {mounted && <TrackProgressBar progress={progress} />}
               </Link>
             </li>

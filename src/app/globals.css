@@ -2,69 +2,96 @@
 
 /*
  * 테마 토큰 (design §9.1 / NFR-10)
- * - 라이트 팔레트를 :root에 완전히 정의한다.
- * - 다크는 토큰만 재정의한다. 색상의 유일한 정의가 미디어 쿼리 안에 있으면 안 된다.
- * - 3상태 테마: data-theme="light" | data-theme="dark" | (미지정 시 시스템 설정 따름)
+ * 디자인 방향: 코드잇 디자인 시스템의 "원칙"을 참고 — 차갑고 밝은 무채색 베이스,
+ *   절제된 단일 액센트, 넉넉한 여백, 부드러운 라운드, 명확한 타이포 위계.
+ *   단 색은 StepUp 고유 팔레트(인디고 계열)로 두어 브랜드를 구분한다.
+ * 규칙: 라이트 팔레트를 :root에 완전히 정의하고, 다크는 토큰만 재정의(NFR-10).
+ * 3상태 테마: data-theme="light" | "dark" | (미지정 시 시스템 설정)
  */
 
 :root {
-  /* 표면 · 텍스트 */
-  --bg: #fbfaf8;
+  /* 표면 · 텍스트 — 차갑고 밝은 무채색(쿨 그레이) 베이스 */
+  --bg: #f7f8fa;
   --surface: #ffffff;
-  --border: #e8e4dd;
-  --text: #1f1d1a;
-  --text-muted: #6b665e;
+  --surface-2: #f1f3f6;
+  --border: #e3e6eb;
+  --text: #1b1d21;
+  --text-muted: #5c626d;
 
-  /* 브랜드 · 상태 — WCAG AA 대비 충족을 위해 조정(NFR-4) */
-  --accent: #a8461f;
-  --success: #2f6b43;
+  /* 브랜드 · 상태 — StepUp 고유 인디고 액센트 (WCAG AA 대비 충족, NFR-4) */
+  --accent: #3538cd;
+  --accent-hover: #2b2ea8;
+  --accent-soft: #eef0ff;
+  --success: #1f7a4d;
+  --success-soft: #e6f4ec;
 
-  /* 트랙별 accent (design §4.1 트랙 6개) */
-  --track-basics: #6b7f9e;
-  --track-artifact: #a0603f;
-  --track-skill: #7a6394;
-  --track-cowork: #3f7a6b;
-  --track-claude-code: #5c6470;
-  --track-mcp: #96693a;
+  /* 트랙별 accent */
+  --track-basics: #3f6fd1;
+  --track-artifact: #b8562a;
+  --track-skill: #7a4fd0;
+  --track-cowork: #2f8f6b;
+  --track-claude-code: #4a5568;
+  --track-mcp: #b07a1e;
+
+  /* 라운드 토큰 (코드잇 corner-radius 참고, M=16이 기본) */
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-full: 999px;
+
+  /* 그림자 — 아주 옅게, 카드 분리용 */
+  --shadow-card: 0 1px 2px rgba(20, 24, 40, 0.04), 0 2px 8px rgba(20, 24, 40, 0.04);
 }
 
 /* 다크 팔레트 — 토큰만 재정의 */
 :root[data-theme="dark"] {
-  --bg: #17140f;
-  --surface: #211d17;
-  --border: #35302a;
-  --text: #f2efe9;
-  --text-muted: #a8a196;
+  --bg: #14161c;
+  --surface: #1c1f27;
+  --surface-2: #232732;
+  --border: #2f3440;
+  --text: #f2f4f8;
+  --text-muted: #a2a9b6;
 
-  --accent: #e0774d;
-  --success: #66a37c;
+  --accent: #9aa2ff;
+  --accent-hover: #b3b9ff;
+  --accent-soft: #23273a;
+  --success: #6fce9c;
+  --success-soft: #1c2b23;
 
-  --track-basics: #8fa2c0;
-  --track-artifact: #c2825f;
-  --track-skill: #9c86b5;
-  --track-cowork: #5fa08e;
-  --track-claude-code: #838b98;
-  --track-mcp: #bd8b57;
+  --track-basics: #7ba0e8;
+  --track-artifact: #e08a5c;
+  --track-skill: #ab8ae8;
+  --track-cowork: #63bd97;
+  --track-claude-code: #93a0b5;
+  --track-mcp: #dcac5c;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 시스템이 다크이고 사용자가 명시적으로 라이트를 고르지 않았을 때만 다크 토큰 적용 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #17140f;
-    --surface: #211d17;
-    --border: #35302a;
-    --text: #f2efe9;
-    --text-muted: #a8a196;
+    --bg: #14161c;
+    --surface: #1c1f27;
+    --surface-2: #232732;
+    --border: #2f3440;
+    --text: #f2f4f8;
+    --text-muted: #a2a9b6;
 
-    --accent: #e0774d;
-    --success: #66a37c;
+    --accent: #9aa2ff;
+    --accent-hover: #b3b9ff;
+    --accent-soft: #23273a;
+    --success: #6fce9c;
+    --success-soft: #1c2b23;
 
-    --track-basics: #8fa2c0;
-    --track-artifact: #c2825f;
-    --track-skill: #9c86b5;
-    --track-cowork: #5fa08e;
-    --track-claude-code: #838b98;
-    --track-mcp: #bd8b57;
+    --track-basics: #7ba0e8;
+    --track-artifact: #e08a5c;
+    --track-skill: #ab8ae8;
+    --track-cowork: #63bd97;
+    --track-claude-code: #93a0b5;
+    --track-mcp: #dcac5c;
+
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -72,11 +99,15 @@
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-border: var(--border);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
   --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
 
   --color-track-basics: var(--track-basics);
   --color-track-artifact: var(--track-artifact);
@@ -85,12 +116,36 @@
   --color-track-claude-code: var(--track-claude-code);
   --color-track-mcp: var(--track-mcp);
 
+  --radius-s: var(--radius-s);
+  --radius-m: var(--radius-m);
+  --radius-l: var(--radius-l);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family:
+    var(--font-sans), "Pretendard Variable", Pretendard, system-ui, -apple-system,
+    "Segoe UI", "Malgun Gothic", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 포커스 링 — 접근성(NFR-5) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
