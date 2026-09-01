@@ -1,0 +1,31 @@
+---
+id: cowork-900
+track: cowork
+order: 900
+title: 작업 범위를 안전하게 제한하기
+summary: 특정 폴더·파일만 다루도록 범위를 좁혀 사고를 막는 법
+level: 3
+estMinutes: 3
+prereq: [cowork-300]
+tags: [안전, 범위제한]
+requires:
+  plan: paid
+  platform: desktop
+mission:
+  goal: 작업 대상을 특정 하위 폴더로 한정해 지시해 본다
+  prompt: |
+    "정리대상" 하위 폴더 안에서만 작업해줘.
+    그 밖의 폴더나 파일은 절대 건드리지 말고,
+    작업 전에 대상 범위를 확인차 다시 알려줘.
+  success: 지정한 폴더로 범위가 한정되고 그 밖은 건드리지 않으면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Cowork 안전과 권한 (검증 필요)
+    url: https://support.claude.com/en/articles/cowork-permissions
+---
+
+## 이게 왜 필요한가
+
+폴더 전체를 열어준 상태에서 광범위한 작업을 시키면 의도치 않은 파일까지 영향을 받을 수 있다.
+작업 범위를 명시적으로 좁히면, 실수로 다른 파일이 바뀌는 사고를 예방한다.
+중요한 폴더를 다룰수록 "여기 안에서만"이라는 한 줄이 안전장치가 된다.

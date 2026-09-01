@@ -1,0 +1,29 @@
+---
+id: cowork-200
+track: cowork
+order: 200
+title: 폴더를 연결해 내 파일로 일 시키기
+summary: 업로드 없이 내 컴퓨터 폴더를 Claude에게 직접 열어주는 법
+level: 2
+estMinutes: 3
+prereq: [cowork-100]
+tags: [파일작업, 폴더연결, 데스크톱]
+requires:
+  plan: paid
+  platform: desktop
+mission:
+  goal: 폴더 하나를 연결하고 파일 목록을 정리시켜 본다
+  prompt: |
+    이 폴더에 있는 파일들을 확장자별로 몇 개씩 있는지 세어주고,
+    3개월 이상 수정되지 않은 파일 목록을 표로 보여줘.
+  success: 파일 개수 표와 오래된 파일 목록이 표로 돌아오면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Cowork에서 폴더 연결하기
+    url: https://support.claude.com/en/articles/cowork-folders
+---
+
+## 이게 왜 필요한가
+
+파일을 하나씩 업로드하는 대신, 폴더를 통째로 연결하면 Claude가 실제 파일 위에서 작업한다.
+정리·변환·요약 같은 반복 파일 작업을 그 자리에서 맡길 수 있다.

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/*
+ * 테마 토큰 (design §9.1 / NFR-10)
+ * - 라이트 팔레트를 :root에 완전히 정의한다.
+ * - 다크는 토큰만 재정의한다. 색상의 유일한 정의가 미디어 쿼리 안에 있으면 안 된다.
+ * - 3상태 테마: data-theme="light" | data-theme="dark" | (미지정 시 시스템 설정 따름)
+ */
+
+:root {
+  /* 표면 · 텍스트 */
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --border: #e8e4dd;
+  --text: #1f1d1a;
+  --text-muted: #6b665e;
+
+  /* 브랜드 · 상태 */
+  --accent: #c2603a;
+  --success: #3f7a52;
+
+  /* 트랙별 accent (design §4.1 트랙 6개) */
+  --track-basics: #6b7f9e;
+  --track-artifact: #a0603f;
+  --track-skill: #7a6394;
+  --track-cowork: #3f7a6b;
+  --track-claude-code: #5c6470;
+  --track-mcp: #96693a;
+}
+
+/* 다크 팔레트 — 토큰만 재정의 */
+:root[data-theme="dark"] {
+  --bg: #17140f;
+  --surface: #211d17;
+  --border: #35302a;
+  --text: #f2efe9;
+  --text-muted: #a8a196;
+
+  --accent: #e0774d;
+  --success: #66a37c;
+
+  --track-basics: #8fa2c0;
+  --track-artifact: #c2825f;
+  --track-skill: #9c86b5;
+  --track-cowork: #5fa08e;
+  --track-claude-code: #838b98;
+  --track-mcp: #bd8b57;
+}
+
+/* 시스템이 다크이고 사용자가 명시적으로 라이트를 고르지 않았을 때만 다크 토큰 적용 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17140f;
+    --surface: #211d17;
+    --border: #35302a;
+    --text: #f2efe9;
+    --text-muted: #a8a196;
+
+    --accent: #e0774d;
+    --success: #66a37c;
+
+    --track-basics: #8fa2c0;
+    --track-artifact: #c2825f;
+    --track-skill: #9c86b5;
+    --track-cowork: #5fa08e;
+    --track-claude-code: #838b98;
+    --track-mcp: #bd8b57;
+  }
+}
+
+/* Tailwind 유틸리티에서 토큰을 색으로 쓸 수 있게 매핑 */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+
+  --color-track-basics: var(--track-basics);
+  --color-track-artifact: var(--track-artifact);
+  --color-track-skill: var(--track-skill);
+  --color-track-cowork: var(--track-cowork);
+  --color-track-claude-code: var(--track-claude-code);
+  --color-track-mcp: var(--track-mcp);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}

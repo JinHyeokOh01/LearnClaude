@@ -1,0 +1,31 @@
+---
+id: cowork-500
+track: cowork
+order: 500
+title: 스프레드시트 데이터 다루기
+summary: 표 데이터를 집계·변환하도록 맡기는 법
+level: 2
+estMinutes: 3
+prereq: [cowork-200]
+tags: [데이터, 스프레드시트]
+requires:
+  plan: paid
+  platform: desktop
+mission:
+  goal: 표 파일 하나를 집계·요약시켜 본다
+  prompt: |
+    연결된 폴더의 매출 스프레드시트를 열어서
+    1) 월별 합계 2) 상위 3개 항목 3) 전월 대비 증감
+    을 계산해 새 요약 표로 만들어줘.
+  success: 월별 합계·상위 항목·증감이 담긴 요약 표가 만들어지면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Cowork 데이터 작업 (검증 필요)
+    url: https://support.claude.com/en/articles/cowork-data
+---
+
+## 이게 왜 필요한가
+
+간단한 집계인데도 함수를 짜고 셀을 맞추다 보면 은근히 시간이 든다.
+데이터가 담긴 파일을 열어주고 원하는 계산을 말로 설명하면, Claude가 표를 읽고 계산해 새 결과를 만든다.
+정기 보고용 집계를 매번 손으로 하던 일이 줄어든다.

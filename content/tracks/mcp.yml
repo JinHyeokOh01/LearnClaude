@@ -1,0 +1,6 @@
+id: mcp
+title: MCP · 커넥터
+tagline: 외부 서비스를 연결해 내 데이터 위에서 쓴다
+order: 600
+outcome: 이 트랙을 마치면 외부 서비스를 연결해 내 데이터 위에서 Claude를 쓸 수 있습니다.
+accentToken: track-mcp

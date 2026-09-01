@@ -1,0 +1,6 @@
+id: skill
+title: Skills
+tagline: 반복 업무를 재사용 가능한 능력으로 만든다
+order: 300
+outcome: 이 트랙을 마치면 반복 업무를 SKILL.md로 정의해 재사용 가능한 능력으로 만들 수 있습니다.
+accentToken: track-skill

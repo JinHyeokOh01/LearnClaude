@@ -1,0 +1,29 @@
+---
+id: claude-code-500
+track: claude-code
+order: 500
+title: 커스텀 명령 만들기
+summary: 자주 하는 작업을 짧은 명령어로 등록해 재사용하는 법
+level: 3
+estMinutes: 3
+prereq: [claude-code-300]
+tags: [claude-code, 커스텀명령]
+requires:
+  platform: cli
+mission:
+  goal: 반복 작업을 커스텀 명령으로 정의해 본다
+  prompt: |
+    "이 폴더 문서들을 훑어 이번 주 요약 만들기" 작업을
+    짧은 커스텀 명령으로 등록하고 싶어. 정의 방법을 안내해줘.
+  success: 커스텀 명령 정의 방법과 등록 절차가 안내되면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Claude Code 커스텀 명령 (검증 필요)
+    url: https://docs.claude.com/en/docs/claude-code/slash-commands
+---
+
+## 이게 왜 필요한가
+
+긴 지시를 매번 입력하는 대신, 짧은 명령어 하나로 등록해두면 편하다.
+자주 반복하는 작업일수록 커스텀 명령의 가치가 커진다.
+"내 자주 쓰는 작업"을 명령으로 만들면 터미널이 나만의 도구가 된다.

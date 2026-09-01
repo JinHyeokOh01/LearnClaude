@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # 파이프라인 (T-91, design §12)
+  # 순서: typecheck → lint → test(coverage) → content validate → build → E2E
+  # 배포는 Vercel의 Git 연동이 담당(main 머지 시 자동). 아래는 검증 게이트.
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests (with coverage gate)
+        run: npm run test:coverage
+
+      - name: Validate content
+        run: npm run validate:content
+
+      - name: Build (static export)
+        run: npm run build
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: E2E tests
+        run: npm run test:e2e

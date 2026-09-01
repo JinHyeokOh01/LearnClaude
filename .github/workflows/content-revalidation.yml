@@ -1,0 +1,23 @@
+# 주간 콘텐츠 재검증 (T-92) — P1 운영 항목 (requirements §2.2)
+# verifiedAt이 90일을 초과한 레슨을 찾아 이슈로 리포트한다 (CR-3).
+# P0 범위 밖이며, 출시 후 운영 단계에서 활성화한다.
+name: Content Revalidation (P1)
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # 매주 월요일 00:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  check-verified-at:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # 재검증 리포트 스크립트는 P1에서 구현. 현재는 플레이스홀더.
+      - name: Report stale lessons
+        run: node scripts/report-stale-content.mjs || true

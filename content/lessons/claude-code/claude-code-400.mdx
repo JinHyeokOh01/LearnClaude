@@ -1,0 +1,30 @@
+---
+id: claude-code-400
+track: claude-code
+order: 400
+title: 여러 파일 일괄 처리하기
+summary: 폴더 전체에 같은 변경을 한 번에 적용하는 법
+level: 3
+estMinutes: 3
+prereq: [claude-code-300]
+tags: [claude-code, 일괄]
+requires:
+  platform: cli
+mission:
+  goal: 폴더의 여러 파일에 같은 규칙을 적용시켜 본다
+  prompt: |
+    이 폴더의 모든 .txt 파일 맨 위에
+    "작성일: (파일 수정일)" 한 줄을 추가하는 작업을 계획해줘.
+    대상 파일 목록을 먼저 보여주고 확인받아줘.
+  success: 대상 목록을 보여준 뒤 일괄 적용되면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Claude Code 일괄 작업 (검증 필요)
+    url: https://docs.claude.com/en/docs/claude-code/batch
+---
+
+## 이게 왜 필요한가
+
+파일 하나하나 열어 같은 수정을 반복하는 건 시간 낭비이자 실수의 원인이다.
+"모든 파일에 이걸 적용해줘" 한 번이면 수십 개가 일관되게 처리된다.
+이름 변경, 머리말 추가, 형식 통일 같은 반복 작업에 강력하다.

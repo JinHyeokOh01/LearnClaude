@@ -1,0 +1,7 @@
+id: claude-code
+title: Claude Code
+tagline: 터미널에서 작업을 맡기고 명령을 만든다
+order: 500
+outcome: 이 트랙을 마치면 터미널에서 Claude에게 작업을 맡기고 커스텀 명령을 만들 수 있습니다.
+prerequisiteNote: 터미널(CLI) 사용 환경이 필요합니다.
+accentToken: track-claude-code

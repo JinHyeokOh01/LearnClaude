@@ -1,0 +1,31 @@
+---
+id: claude-code-600
+track: claude-code
+order: 600
+title: 프로젝트 지침 파일 두기
+summary: 폴더에 지침을 저장해 매번 같은 규칙을 적용받는 법
+level: 3
+estMinutes: 3
+prereq: [claude-code-300]
+tags: [claude-code, 지침]
+requires:
+  platform: cli
+mission:
+  goal: 폴더에 작업 지침 파일을 만들어 본다
+  prompt: |
+    이 폴더에서 작업할 때 항상 지킬 규칙을 담은 지침 파일을 만들어줘.
+    - 파일 수정 전 항상 요약 먼저
+    - 한국어로 응답
+    - 원본은 백업 후 수정
+  success: 폴더 작업의 기본 규칙을 담은 지침 파일이 만들어지면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Claude Code 프로젝트 설정 (검증 필요)
+    url: https://docs.claude.com/en/docs/claude-code/memory
+---
+
+## 이게 왜 필요한가
+
+폴더마다 작업 방식이 다르다면, 그 규칙을 매번 말하는 건 번거롭다.
+지침 파일을 폴더에 두면 그 폴더에서 일할 때 규칙이 자동으로 적용된다.
+"이 프로젝트에서는 이렇게"를 한 번 적어두면 계속 유효하다.

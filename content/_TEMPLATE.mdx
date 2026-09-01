@@ -1,0 +1,31 @@
+---
+# 레슨 작성 템플릿 (T-70) — 이 파일은 빌드에서 제외됨(_ prefix + lessons/ 밖)
+# 새 레슨은 content/lessons/<track>/<track>-<order>.mdx 로 복사해 작성한다.
+id: track-100 # <track>-<order 100단위> · 발행 후 변경 금지(NFR-17)
+track: basics # 존재하는 트랙 id
+order: 100 # 100 단위 간격(NFR-16)
+title: 40자 이내 제목
+summary: 80자 이내 한 줄 요약
+level: 1 # 1: 채팅 UI 완결 / 2: 파일·도구 연결 / 3: 설정·구조 설계 (CR-6)
+estMinutes: 3 # 1~10
+prereq: [] # 선행 레슨 id 배열 (completed만 인정)
+tags: [] # P0 미사용, P1 검색용으로 미리 채움
+# requires: # 선택 — 플랜/플랫폼 요구 시 (CR-4)
+#   plan: paid
+#   platform: desktop
+mission:
+  goal: 한 문장 목표
+  prompt: |
+    복붙 가능한 프롬프트.
+    실제 업무 파일 없이 수행 가능해야 함 (샘플/가상 상황 제공, CR-5).
+  success: 성공 판정 기준 한 문장
+verifiedAt: 2026-08-31 # 작성·검증 시점 (CR-3, 90일 초과 시 재검증 대상)
+sources: # 공식 문서 최소 1개 (CR-2: docs/support/claude.com)
+  - label: 출처 제목
+    url: https://support.claude.com/en/articles/...
+---
+
+## 이게 왜 필요한가
+
+첫 문단에서 "이걸 알면 뭐가 달라지는지"를 실무 상황으로 제시한다 (CR-1).
+본문은 읽는 시간 3분(한국어 약 900자) 내외로 유지 (AC-4.5).

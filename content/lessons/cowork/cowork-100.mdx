@@ -1,0 +1,31 @@
+---
+id: cowork-100
+track: cowork
+order: 100
+title: Cowork로 첫 작업 맡기기
+summary: 채팅을 넘어 Claude에게 다단계 작업을 위임하는 개념 잡기
+level: 2
+estMinutes: 3
+prereq: []
+tags: [cowork, 작업위임]
+requires:
+  plan: paid
+  platform: desktop
+mission:
+  goal: 간단한 다단계 작업을 하나 맡겨 본다
+  prompt: |
+    아래 할 일을 순서대로 처리해줘.
+    1) 이번 주 할 일 5개를 중요도 순으로 정렬
+    2) 각 항목에 예상 소요 시간 추정
+    3) 오전/오후로 배치한 표로 정리
+  success: 정렬 → 시간 추정 → 배치 표가 순서대로 나오면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Get started with Claude Cowork
+    url: https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+---
+
+## 이게 왜 필요한가
+
+Cowork는 "질문에 답한다"를 넘어 "여러 단계를 스스로 처리한다"로 넘어가는 첫 걸음이다.
+작업을 잘게 나눠 지시하면, Claude가 각 단계를 이어서 수행한다.

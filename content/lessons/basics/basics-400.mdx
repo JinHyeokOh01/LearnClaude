@@ -1,0 +1,32 @@
+---
+id: basics-400
+track: basics
+order: 400
+title: 원하는 형식을 예시로 고정하기
+summary: 결과물 형식을 매번 설명하지 말고 예시 하나로 못박는 법
+level: 1
+estMinutes: 3
+prereq: [basics-100]
+tags: [프롬프트, 형식]
+mission:
+  goal: 예시 출력을 먼저 주고 같은 형식으로 반복시켜 본다
+  prompt: |
+    앞으로 회의록을 이 형식으로 정리해줘. 예시:
+    ---
+    [결정사항] ...
+    [할 일] 담당자 - 내용 - 기한
+    [다음 안건] ...
+    ---
+    이 형식을 기억하고, 다음에 내가 회의 내용을 주면 그대로 채워줘.
+  success: 다음 회의 내용을 줬을 때 예시와 같은 형식으로 정리되면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: 효과적인 프롬프트 작성 (검증 필요)
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering
+---
+
+## 이게 왜 필요한가
+
+"표로 정리해줘" 같은 지시는 사람마다 다르게 해석된다.
+원하는 결과물의 예시를 한 번 보여주면, 말로 열 줄 설명하는 것보다 정확하게 형식이 고정된다.
+반복 업무일수록 예시 하나가 매번의 설명을 대신한다.

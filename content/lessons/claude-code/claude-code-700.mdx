@@ -1,0 +1,30 @@
+---
+id: claude-code-700
+track: claude-code
+order: 700
+title: 안전하게 작업 되돌리기
+summary: 변경 전 백업·확인으로 실수를 되돌릴 수 있게 하는 법
+level: 3
+estMinutes: 3
+prereq: [claude-code-300]
+tags: [claude-code, 안전]
+requires:
+  platform: cli
+mission:
+  goal: 되돌릴 수 있는 안전한 작업 방식을 지시해 본다
+  prompt: |
+    앞으로 이 폴더에서 파일을 바꾸기 전에 항상
+    원본을 "백업" 폴더에 복사한 뒤 수정해줘.
+    지금 그 방식으로 메모.txt를 정리해줘.
+  success: 원본 백업 후 수정이 이루어지면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Claude Code 안전 작업 (검증 필요)
+    url: https://docs.claude.com/en/docs/claude-code/safety
+---
+
+## 이게 왜 필요한가
+
+파일을 직접 바꾸는 만큼, 되돌릴 방법을 미리 마련해두는 게 중요하다.
+"바꾸기 전 백업"을 규칙으로 두면 실수해도 원래대로 돌릴 수 있다.
+안심하고 더 과감하게 작업을 맡길 수 있게 된다.

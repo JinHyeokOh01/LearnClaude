@@ -1,0 +1,31 @@
+---
+id: cowork-700
+track: cowork
+order: 700
+title: 여러 문서에서 정보 모으기
+summary: 폴더의 여러 파일을 훑어 필요한 정보만 취합하는 법
+level: 2
+estMinutes: 3
+prereq: [cowork-200]
+tags: [자료조사, 취합]
+requires:
+  plan: paid
+  platform: desktop
+mission:
+  goal: 폴더 안 여러 문서에서 특정 정보를 뽑아 표로 모아 본다
+  prompt: |
+    이 폴더의 모든 계약서 파일에서
+    상대방 이름, 계약 시작일, 종료일, 금액을 찾아
+    한 개의 표로 정리해줘. 파일에 없는 항목은 "-"로 표시해줘.
+  success: 각 문서의 핵심 항목이 한 표로 취합되면 성공입니다.
+verifiedAt: 2026-08-31
+sources:
+  - label: Cowork 다중 파일 작업 (검증 필요)
+    url: https://support.claude.com/en/articles/cowork-multi-file
+---
+
+## 이게 왜 필요한가
+
+같은 종류의 문서 수십 개에서 핵심만 뽑아 정리하는 일은 지루하고 실수가 잦다.
+폴더를 통째로 열어주고 "이 항목들을 모아줘"라고 하면, 파일을 하나씩 열지 않아도 표가 완성된다.
+계약서·이력서·보고서처럼 형식이 비슷한 문서 뭉치에서 특히 강력하다.
