@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { ComponentProps } from "react";
+import { FlowDiagram } from "@/components/lesson/FlowDiagram";
 
 /**
  * 레슨 본문 MDX 렌더 (T-15)
@@ -52,6 +53,8 @@ const components = {
   td: (props: ComponentProps<"td">) => (
     <td className="border border-[var(--border)] px-3 py-2" {...props} />
   ),
+  // 커스텀 인포그래픽 컴포넌트 — MDX 본문에서 임포트 없이 사용 가능
+  FlowDiagram,
 };
 
 export function LessonBody({ source }: { source: string }) {
